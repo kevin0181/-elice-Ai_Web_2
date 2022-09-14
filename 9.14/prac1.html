@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <ul>
+        <li>
+            1번<input type="checkbox" class="box" name="box" value="1" />
+        </li>
+        <li>
+            2번<input type="checkbox" class="box" name="box" value="2" />
+        </li>
+        <li>
+            3번<input type="checkbox" class="box" name="box" value="3" />
+        </li>
+    </ul>
+    <div id="result">
+
+    </div>
+</body>
+<script>
+
+    let arr3 = [1, 2, 3, 4, 5];
+
+    window.onload = () => {
+        let arr1 = document.querySelectorAll("input[name='box']").value;
+
+        for (let i = 0; i < arr1.length; i++) { // i++ === i=i+1
+            console.log(`${i} = ${arr1[i]}`);
+        }
+
+        console.log(arr3)
+
+        arr3.map((e) => {
+            console.log(e);
+        })
+
+
+        document.getElementById('result').innerHTML = "<p>안녕하세요</p><ul><li>hi</li></ul>";
+
+
+    }
+</script>
+
+</html>

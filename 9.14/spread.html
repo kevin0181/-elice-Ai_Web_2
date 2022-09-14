@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <input type="text" id="input1" onkeyup="result(this)">
+</body>
+<script>
+
+    let o = {
+    }
+
+    function result(e) {
+        let str = "수박";
+        let value = e.value;
+
+        o[str] = {
+            ...o[str],
+            value : e.value
+        }
+
+        console.log(o);
+    }
+
+
+
+</script>
+
+</html>

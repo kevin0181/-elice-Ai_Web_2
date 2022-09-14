@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body></body>
+<script>
+
+    const Person = (name) => {
+        // 함수를 변수로 생성한다.
+        const printName = () => console.log(name)
+        return { printName }
+    } //함수를리턴하며closure를생성한다. 
+    
+    const person = Person('Daniel')
+    person.printName();
+
+    function printName(name) {
+        console.log('name : ', name)
+    }
+    // 함수끼리 비교한다.
+    // === 의 경우, 변수가 같은 객체(함수)를 가리키는지 체크한다. 
+    console.log(printName === person.printName)
+
+</script>
+
+</html>

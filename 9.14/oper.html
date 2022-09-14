@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    // function findMin(...res) {
+    //     console.log(res);
+    // }
+
+    // findMin(9, 8, 7, 6, 5, 4, 3)
+
+    function sumArray(sum, arr) {
+        if (arr.length === 0) 
+        return sum; 
+        const [head, ...tail] = arr; 
+        return sumArray(sum + head, tail);
+    }
+
+    console.log(sumArray(0, [1, 2, 3, 4, 5]));
+
+</script>
+
+</html>
