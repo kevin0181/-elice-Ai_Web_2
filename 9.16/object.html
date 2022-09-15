@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body></body>
+<script>
+
+    // 용어 정리
+
+    let obj1 = {} // 'object literal'
+    let obj2 = new Object() // 'object constructor'
+
+
+
+    // obj3는 객체를 담고있는 변수
+    // 객체가 담고 있는 것들을 properties
+    // a는 key
+    // 1은 value
+    let obj3 = {
+        a: 1
+    }
+
+    // field => javascript에도 존재하지만
+    // java에서 클래스 안에서 선언되어 있는 변수들이 있는곳.
+
+
+
+
+    //javascript 또한 class가 존재합니다.
+    class Class1 {
+
+        static name; // => field
+
+        //생성자
+        constructor(a, b) {
+            this.a = a;
+            this.b = b;
+        }
+
+        //메서드
+        add() {
+            return this.a + this.b
+        }
+
+        //getter
+        get getData() {
+            return this.add();
+        }
+
+    }
+
+    //class use
+    const callClass = new Class1(1, 5);
+    // console.log(callClass.getData);
+
+
+
+    let exData = {
+        name: "kevin",
+        age: 26
+    }
+
+    // computed properties
+    // console.log(exData.name);
+    // console.log(exData["name"]);
+
+    // delete properties
+    delete exData.age;
+    // console.log(exData);
+
+    // add properties
+    exData.age = 24;
+    // console.log(exData);
+    exData["age"] = 26;
+    // console.log(exData);
+
+
+    // reduce!
+
+    // arr.reduce(callback(accumulator, currentValue, index, array), initialValue);
+
+    //accumulator -> 누적되는 값
+    //currentValue -> 현재 배열의 요소
+    //index -> 현재 배열 요소의 index (생략 가능)
+    //array -> reduce 함수를 호출한 배열 (생략 가능)
+    //initialValue -> callback의 최초 호출시 accumulator 초기값
+
+    let a = {}["a"];
+    console.log("a : " + a);
+
+    let b = {}["b"] = 1;
+    console.log("b : " + b)
+
+    // --------------
+    // let data = ["a", "s", "d", "a", "s", "d"];
+    // let result = data.reduce((key, value) => {
+
+    //     console.log(key, value);
+
+    //     // 만약 key = obj에 해당하는 value가 존재하지 않는다면?
+    //     if (!key[value]) {
+    //         console.log(key[value]);
+    //         key[value] = 0; // 0으로 초기화
+    //     }
+
+    //     key[value]++;
+
+    //     return key;
+    // }, {});
+
+    // console.log(result);
+
+
+
+</script>
+
+</html>

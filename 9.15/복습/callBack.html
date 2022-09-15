@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+</body>
+<script>
+
+    function func(callback) { // 2.
+        callback();
+    }
+
+    function callback() { // 3.
+        console.log("안녕하세요.");
+    }
+    
+    func(callback); // 1.
+
+</script>
+
+</html>
