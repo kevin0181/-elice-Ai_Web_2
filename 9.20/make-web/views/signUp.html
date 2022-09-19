@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <h1>SignUp page</h1>
+    <a href="/">홈</a>
+    <a href="/page/login">로그인</a><br><br><br>
+    <form id="signUpForm">
+        <input type="text" id="id" name="id" placeholder="아이디를 입력하세요."><br><br>
+        <input type="password" id="pwd" name="pwd" placeholder="비밀번호를 입력하세요."><br><br>
+        <input type="password" id="rePwd" name="rePwd" placeholder="비밀번호를 한번 더 입력하세요."><br><br>
+        <input type="text" id="name" name="name" placeholder="이름을 입력하세요."><br><br>
+        <input type="button" value="회원가입" onclick="signFunc()">
+    </form>
+</body>
+<script>
+    let signUpForm = document.getElementById("signUpForm");
+
+
+    let signFunc = () => {
+
+        let id = signUpForm.id.value;
+        let pwd = signUpForm.pwd.value;
+        let rePwd = signUpForm.rePwd.value;
+        let name = signUpForm.name.value;
+
+        if (id === "") {
+            alert("아이디를 입력해주세요.");
+            return;
+        }
+
+        if (pwd === "") {
+            alert("비밀번호를 입력해주세요.");
+            return;
+        }
+
+        if (rePwd === "") {
+            alert("비밀번호 확인을 입력해주세요.");
+            return;
+        }
+
+        if (name === "") {
+            alert("이름을 입력해주세요.")
+            return;
+        }
+
+        if (pwd !== rePwd) {
+            alert("비밀번호와 비밀번호 확인이 틀립니다.");
+            return;
+        }
+
+        // let dataFrom = $("#signUpForm").serialize()
+
+        $.ajax({
+            type: "POST",
+            url: '/signUp',
+            data: {
+                id,
+                pwd,
+                name
+            },
+            success: (res) => {
+                console.log(res);
+                alert(res.message);
+                location.href="/page/login";
+            }
+        });
+
+
+    }
+
+</script>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <h1>Login page</h1>
+    <a href="/">홈</a>
+    <form id="loginForm">
+        <a href="/page/signUp">회원가입</a><br><br><br>
+        <input type="text" id="id" name="id" placeholder="아이디를 입력하세요.">
+        <input type="password" id="pwd" name="pwd" placeholder="비밀번호를 입력하세요.">
+        <input type="button" value="로그인" onclick="loginFunc()">
+    </form>
+</body>
+<script>
+    let loginForm = document.getElementById("loginForm");
+
+    let loginFunc = () => {
+
+        let id = loginForm.id.value;
+        let pwd = loginForm.pwd.value;
+
+        if (id === "") {
+            alert("아이디를 입력해주세요.");
+            return;
+        }
+
+        if (pwd === "") {
+            alert("비밀번호를 입력해주세요.");
+            return;
+        }
+
+        $.ajax({
+            type: "POST",
+            url: '/login',
+            data: {
+                id,
+                pwd,
+            },
+            success: (res) => {
+                console.log(res);
+                alert(res.message);
+                location.href="/page/success";
+            }
+        });
+    }
+</script>
+
+</html>
