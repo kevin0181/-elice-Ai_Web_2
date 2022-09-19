@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body></body>
+<script>
+
+    let func1 = async () => {
+        try {
+            await func2().then(res => {
+                console.log(res);
+            }).finally(() => {
+                console.log("마지막")
+            });
+        } catch (e) {
+            console.log("error : " + e);
+        }
+
+    }
+
+    async function func2() {
+        console.log("첫번째")
+        return "안녕하세요.";
+    }
+
+    func1();
+
+</script>
+
+</html>

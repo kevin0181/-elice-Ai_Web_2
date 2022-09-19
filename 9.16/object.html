@@ -52,7 +52,7 @@
 
     //class use
     const callClass = new Class1(1, 5);
-    // console.log(callClass.getData);
+    console.log(callClass.getData);
 
 
 
@@ -70,15 +70,16 @@
     // console.log(exData);
 
     // add properties
-    exData.age = 24;
+    exData.age1 = 24;
     // console.log(exData);
     exData["age"] = 26;
-    // console.log(exData);
+    console.log(exData);
 
 
     // reduce!
 
-    // arr.reduce(callback(accumulator, currentValue, index, array), initialValue);
+    // arr.reduce(callback(accumulator,currentValue, 
+    // index, array), initialValue);
 
     //accumulator -> 누적되는 값
     //currentValue -> 현재 배열의 요소
@@ -93,23 +94,24 @@
     console.log("b : " + b)
 
     // --------------
-    // let data = ["a", "s", "d", "a", "s", "d"];
-    // let result = data.reduce((key, value) => {
+    
+    let data = ["a", "s", "d", "a", "s", "d"];
+    let result = data.reduce((key, value) => {
 
-    //     console.log(key, value);
+        console.log(key, value);
 
-    //     // 만약 key = obj에 해당하는 value가 존재하지 않는다면?
-    //     if (!key[value]) {
-    //         console.log(key[value]);
-    //         key[value] = 0; // 0으로 초기화
-    //     }
+        // 만약 key = obj에 해당하는 value가 존재하지 않는다면?
+        if (!key[value]) {
+            console.log(key[value]);
+            key[value] = 0; // 0으로 초기화
+        }
 
-    //     key[value]++;
+        key[value]++;
 
-    //     return key;
-    // }, {});
+        return key;
+    }, {});
 
-    // console.log(result);
+    console.log(result);
 
 
 
