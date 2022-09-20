@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <h1>SignUp 페이지</h1>
+    <a href="/">홈</a>
+    <a href="/user/login">로그인</a>
+    <br>
+    <br>
+    <form id="signUpForm">
+        <input type="text" id="id" name="id" placeholder="아이디를 입력해주세요."><br><br>
+        <input type="password" id="pwd" name="pwd" placeholder="비밀번호를 입력해주세요."><br><br>
+        <input type="password" id="rePwd" name="rePwd" placeholder="비밀번호 확인을 입력해주세요."><br><br>
+        <input type="text" id="name" name="name" placeholder="이름을 입력해주세요."><br><br>
+        <input type="button" value="회원가입" onclick="onClickSignUpButton()">
+    </form>
+</body>
+<script>
+
+    //회원가입 폼을 가져옴
+    let signUpForm = document.getElementById("signUpForm");
+
+    // 회원가입 순서 : 1번
+    // 회원가입 버튼 클릭 이벤트 핸들러
+    let onClickSignUpButton = () => {
+
+        // 회원가입 폼의 요소들을 가져옴
+        let { id, pwd, rePwd, name } = signUpForm;
+
+
+        //각각의 value들의 빈 값 검사 (유효성 검사)
+        if (id.value === "") {
+            alert("아이디를 입력해주세요.");
+            return;
+        }
+
+        if (pwd.value === "") {
+            alert("비밀번호를 입력해주세요.");
+            return;
+        }
+
+        if (rePwd.value === "") {
+            alert("비밀번호 확인을 입력해주세요.");
+            return;
+        }
+
+        if (name.value === "") {
+            alert("이름을 입력해주세요.");
+            return;
+        }
+
+        if (pwd.value !== rePwd.value) {
+            alert("비밀번호와 비밀번호 확인이 일치하지 않습니다.");
+            return;
+        }
+
+        //회원가입 순서 : 2번
+        // 정상적으로 값들이 들어가 있다면 ajax를 통해 express(서버)쪽에 데이터를 전달
+        $.ajax({
+            data:
+            {
+                id: id.value,
+                pwd: pwd.value,
+                name: name.value
+            },
+            url: "http://localhost:8080/user/signUp",
+            type: "POST",
+            success: (res) => { //응답이 제대로 왔을 경우.
+                //회원가입 순서 : 4번
+
+                //회원 가입 성공 메시지 출력
+                alert(res.message);
+
+                //로그인 페이지 이동
+                location.href = "/user/login";
+            },
+            error: (e) => {
+                console.log(e);
+            }
+        })
+    }
+</script>
+
+</html>
