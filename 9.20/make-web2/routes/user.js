@@ -1,7 +1,7 @@
 const express = require("express")
 const router = express.Router();
 
-let userData = []; //회원 가입한 사람들을 저장 <= 로그인할때 확인
+let userData = []; //회원 가입한 사람들을 저장 <= 로그인할때 확인 //ex: DB
 
 // GET http://localhost:8080/user/login => 로그인 페이지를 보여주고.
 router.get("/login", (req, res, next) => {
@@ -11,7 +11,9 @@ router.get("/login", (req, res, next) => {
 // http://localhost:8080/user/signUp => 
 router.get("/signUp", (req, res, next) => {
     res.render("signUp.html");
-})
+});
+
+
 
 //로그인 순서 : 3번
 router.post("/login", (req, res, next) => {
@@ -33,7 +35,6 @@ router.post("/login", (req, res, next) => {
         } else {
             res.json({ message: "아이디나 비밀번호가 일치하지 않습니다." });
         }
-        res.json({});
     }
 
 })

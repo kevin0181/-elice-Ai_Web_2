@@ -32,7 +32,6 @@
         // 회원가입 폼의 요소들을 가져옴
         let { id, pwd, rePwd, name } = signUpForm;
 
-
         //각각의 value들의 빈 값 검사 (유효성 검사)
         if (id.value === "") {
             alert("아이디를 입력해주세요.");
@@ -76,7 +75,7 @@
                 //회원 가입 성공 메시지 출력
                 alert(res.message);
 
-                //로그인 페이지 이동
+                //로그인 페이지 이동 GET
                 location.href = "/user/login";
             },
             error: (e) => {
