@@ -56,4 +56,23 @@ router.post("/signUp", (req, res, next) => {
 });
 
 
+//삭제
+router.post("/delete", (req, res, next) => {
+    //req.body ==> post
+    let { id, pwd } = req.body;
+
+    userData.map((user) => {
+        if (user.id === id) {
+            if (user.pwd === pwd) {
+                //id 랑 pwd 일치하니깐 삭제
+                userData = userData.filter((data) => data.id !== id);
+                res.json({ message: "회원을 삭제 하였습니다." });
+                return;
+            }
+        }
+    });
+
+})
+
+
 module.exports = router;

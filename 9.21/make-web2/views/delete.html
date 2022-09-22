@@ -16,10 +16,43 @@
     <form id="deleteForm">
         <input type="text" id="id" name="id" placeholder="아이디를 입력해주세요.">
         <input type="password" id="pwd" name="pwd" placeholder="비밀번호를 입력해주세요.">
-        <input type="button" value="삭제" onclick="">
+        <input type="button" value="삭제" onclick="onClickDeleteButton()">
     </form>
 </body>
 <script>
+    let deleteForm = document.getElementById("deleteForm");
+
+    let onClickDeleteButton = () => {
+
+        let { id, pwd } = deleteForm; //id and pwd 가져옴
+
+        if (id.value === "") {
+            alert("아이디를 입력해주세요.");
+            return;
+        }
+
+        if (pwd.value === "") {
+            alert("비밀번호를 입력해주세요.");
+            return false; // return false === return;
+        }
+
+        $.ajax({
+            url: '/user/delete',
+            type: 'POST',
+            data: {
+                id: id.value,
+                pwd: pwd.value
+            },
+            success: (res) => {
+                console.log(res);
+            }
+        })
+
+
+    }
+
+
+
 
 </script>
 
