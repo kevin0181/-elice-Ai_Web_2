@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>index</title>
+    <!-- juqery를 사용할 수 있도록 가져온부분 -->
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+
+    <!-- bootstrap을 사용하기 위해 가져온 부분 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+    <!----------------------------------------->
+
+    <!-- css가져오는 태그 -->
+    <link href="./public/css/index.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="container" style="padding: 40px;">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Update</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        <tbody id="table-id">
+        </tbody>
+    </table>
+    <div class="my-div">
+        <button type="button" onclick="location.href='./pages/create.html'" class="btn btn-outline-success">게시글
+            작성</button>
+    </div>
+</body>
+
+<!-- index.js파일을 가져온 부분 (경로 잘봐야합니다.) -->
+<!--  ./ <= 현재 파일 기준으로 경로를 잡겠다. -->
+<script src="./public/js/index.js"></script>
+
+</html>

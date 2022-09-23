@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>create</title>
+    <!-- juqery를 사용할 수 있도록 가져온부분 -->
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+
+    <!-- bootstrap을 사용하기 위해 가져온 부분 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+    <!----------------------------------------->
+
+</head>
+
+<body class="container">
+    <form id="create-form">
+        <div class="mb-3 mt-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" name="title" id="title" placeholder="제목을 입력해주세요.">
+        </div>
+        <div class="mb-3">
+            <label for="content" class="form-label">Content</label>
+            <textarea class="form-control" name="content" id="content" rows="3" placeholder="내용을 입력하세요."></textarea>
+        </div>
+        <div>
+            <button type="button" onclick="createPost()" class="btn btn-outline-primary">생성</button>
+            <button type="button" onclick="history.back()" class="btn btn-outline-danger">취소</button>
+        </div>
+    </form>
+</body>
+
+<script src="./../public/js/create.js"></script>
+
+</html>
