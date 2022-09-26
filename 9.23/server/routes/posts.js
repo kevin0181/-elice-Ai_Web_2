@@ -63,7 +63,6 @@ router.get("/:id/find", async (req, res, next) => {
     } catch (e) {
         next(e);
     }
-    // http://localhost:8080/posts/632c00148a165838f2d77df7/find
 })
 
 
