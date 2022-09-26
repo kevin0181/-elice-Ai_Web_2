@@ -2,8 +2,9 @@
 const express = require("express");//외부 모듈을 가져온 // 서버 실행 1번
 const mongoose = require("mongoose"); // 외부 모듈을 가져온 //db 실행 1번
 const cors = require("cors"); // cors오류를 해결하기 위해 가져온 외부 모듈
+// posts?id=1 <= 이런 형태로 들어오는 데이터를 읽을 수 있도록 파싱
 const bodyParser = require("body-parser");
-
+ 
 //직접 만든 파일은 경로를 통해서 가져옵니다.
 //직접 만든 js파일을 가져온거고, 그리고 직접 만든 js파일은 뒤에 확장자명이 붙지않는다.
 //css, json같은 파일들은 확장자 명이 붙습니다.
