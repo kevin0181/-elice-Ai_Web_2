@@ -11,7 +11,7 @@ function App() {
 
   useEffect(() => {
     console.log(status);
-  }, [status])
+  },[status])
 
   let onClickBtn = () => {
     setStatus(!status);
