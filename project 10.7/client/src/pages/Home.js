@@ -16,6 +16,9 @@ let Home = () => {
 
     const navigate = useNavigate();
 
+    //처음 렌더링이 되었을 경우, 쿠키의 값을 확인,
+    // 만약 쿠키가 비워져있지 않다면 (즉, 로그인 되어있는 상태)
+    // 일기장 리스트 페이지로 이동시킴
     useEffect(() => {
         console.log(cookies);
         if (cookies.token !== undefined) {

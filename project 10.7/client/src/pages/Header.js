@@ -3,11 +3,15 @@ import { useNavigate } from "react-router-dom";
 
 let Header = () => {
 
+    //쿠키를 사용하기 위해 작성
     const [cookies, setCookie, removeCookie] = useCookies(["token"]);
     const navigate = useNavigate();
 
+    //로그아웃 버튼을 눌렀을 경우,
+    // 쿠키에 존재하는 token이라는 이름의 value를 삭제함.
     let logOutBtn = () => {
         removeCookie("token", { path: "/" });
+        //그 후 home페이지로 이동
         navigate("/");
     }
 
@@ -44,6 +48,7 @@ let Header = () => {
                             justifyContent: "space-between"
                         }}>
                             {
+                                //만약 쿠키에 token이 존재하지 않는다면 로그아웃 버튼을 보여주지 않음.
                                 cookies.token === undefined ? (<></>) : (
                                     <button className="btn btn-danger" onClick={logOutBtn}>로그아웃</button>
                                 )
